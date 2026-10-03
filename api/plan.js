@@ -64,14 +64,21 @@ export async function POST(request) {
   const split = computeSplit(input);
   let gen;
   try {
-    gen = await generateJson({
+    const ask = (extra = '') => generateJson({
       apiKey,
       model,
       system: SYSTEM_PROMPT,
-      user: buildUserMessage(input, split, now),
+      user: buildUserMessage(input, split, now) + extra,
       schema: RESPONSE_SCHEMA,
       maxOutputTokens: LIMITS.maxOutputTokens,
     });
+    try {
+      gen = await ask();
+    } catch (first) {
+      // Replies sit close to the 300-token cap; if one is cut off, retry once and ask for shorter sentences.
+      if (first.code !== 'truncated') throw first;
+      gen = await ask('\nYour last reply was too long. Keep every sentence under 10 words.');
+    }
   } catch (e) {
     console.error('gemini failed:', e.code, e.message);
     await insertPlan({

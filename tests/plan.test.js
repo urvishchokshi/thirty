@@ -160,8 +160,17 @@ test('invalid input is rejected before any database or Gemini call', async () =>
   assert.equal(calls.length, 0);
 });
 
-test('truncated Gemini output (MAX_TOKENS) returns 502 and is stored as an error row', async () => {
-  state.gemini = [geminiReply(goodModel, { finishReason: 'MAX_TOKENS' })];
+test('a cut-off reply is retried once with a shorter-sentences nudge', async () => {
+  state.gemini = [geminiReply(goodModel, { finishReason: 'MAX_TOKENS' }), geminiReply(goodModel)];
+  const res = await POST(req(body()));
+  assert.equal(res.status, 200);
+  const g = calls.filter((c) => c.url.includes('generativelanguage'));
+  assert.equal(g.length, 2);
+  assert.match(JSON.parse(g[1].init.body).contents[0].parts[0].text, /under 10 words/);
+});
+
+test('truncated Gemini output twice (MAX_TOKENS) returns 502 and is stored as an error row', async () => {
+  state.gemini = [geminiReply(goodModel, { finishReason: 'MAX_TOKENS' }), geminiReply(goodModel, { finishReason: 'MAX_TOKENS' })];
   const res = await POST(req(body()));
   assert.equal(res.status, 502);
   assert.equal(state.inserts[0].status, 'error');
