@@ -1,0 +1,881 @@
+<!doctype html>
+<html lang="en-IN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Thirty: know what you can spend and still reach payday</title>
+<meta name="description" content="Every Monday, know what you can spend and still reach payday.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Thirty">
+<meta property="og:title" content="Thirty: what date does your salary run out?">
+<meta property="og:description" content="Every Monday, know what you can spend and still reach payday.">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Thirty: what date does your salary run out?">
+<meta name="twitter:description" content="Every Monday, know what you can spend and still reach payday.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect x='1.5' y='4.5' width='31' height='28' rx='7' fill='%2316202B'/%3E%3Crect x='8' y='1' width='3' height='7' rx='1.5' fill='%2316202B'/%3E%3Crect x='23' y='1' width='3' height='7' rx='1.5' fill='%2316202B'/%3E%3Ctext x='17' y='25' text-anchor='middle' font-family='Georgia,serif' font-weight='700' font-size='14' fill='%23FAF6EE'%3E30%3C/text%3E%3Cpath d='M5 19c2-8 21-10 25-2 3 7-12 12-21 9' fill='none' stroke='%23F2A41C' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E">
+<meta name="theme-color" content="#FAF6EE">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF6EE;
+  --bg-2:#F3ECDF;
+  --card:#FFFDF9;
+  --ink:#16202B;
+  --ink-2:#2A3542;
+  --muted:#545B66;
+  --line:#E4DACA;
+  --marigold:#F2A41C;
+  --marigold-deep:#B86E00;
+  --marigold-soft:#FCE9C4;
+  --green:#1D5C45;
+  --green-soft:#DCEBE2;
+  --green-light:#93D7B2;
+  --danger:#A3361F;
+  --radius:16px;
+  --shadow:0 1px 2px rgba(22,32,43,.05),0 8px 24px -12px rgba(22,32,43,.18);
+  --shadow-lg:0 2px 4px rgba(22,32,43,.05),0 24px 48px -24px rgba(22,32,43,.30);
+  --display:"Fraunces",Georgia,"Times New Roman",serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;overflow-x:hidden}
+img,svg{display:block;max-width:100%}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.08;letter-spacing:-.015em;margin:0}
+p{margin:0}
+.num{font-variant-numeric:tabular-nums lining-nums;font-feature-settings:"tnum" 1,"lnum" 1}
+.wrap{width:100%;max-width:1140px;margin:0 auto;padding:0 20px}
+[hidden]{display:none!important}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+:focus-visible{outline:3px solid var(--ink);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--ink);color:var(--bg);padding:10px 14px;border-radius:10px;z-index:100;text-decoration:none;font-weight:700}
+.skip:focus{top:12px}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eyebrow .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--marigold);margin-right:8px;vertical-align:1px}
+section{padding:72px 0}
+.section-head{max-width:640px;margin-bottom:36px}
+.section-head h2{font-size:clamp(32px,6vw,48px);margin-top:12px}
+.section-head p{color:var(--muted);margin-top:14px;font-size:18px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:14px 24px;border-radius:999px;font:700 17px/1.2 var(--sans);text-decoration:none;text-align:center;border:2px solid transparent;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease}
+.btn-primary{background:var(--ink);color:var(--bg);box-shadow:0 10px 24px -12px rgba(22,32,43,.6)}
+.btn-primary:hover{transform:translateY(-1px);background:#0c141c}
+.btn-primary .pill{background:var(--marigold);color:var(--ink);border-radius:999px;padding:3px 10px;font-size:13px;font-weight:800}
+.btn-ghost{background:transparent;border-color:var(--ink);color:var(--ink)}
+.btn-ghost:hover{background:var(--ink);color:var(--bg)}
+
+/* Header */
+.site-head{padding:18px 0}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:24px;text-decoration:none;letter-spacing:-.02em}
+.logo-mark{width:34px;height:34px}
+.head-link{font-weight:700;font-size:15px;text-decoration:none;padding:10px 16px;border-radius:999px;border:1.5px solid var(--ink)}
+.head-link:hover{background:var(--ink);color:var(--bg)}
+
+/* Hero */
+.hero{padding:28px 0 64px}
+.hero-grid{display:grid;gap:40px;align-items:center}
+.hero h1{font-size:clamp(40px,10.5vw,76px);margin-top:16px}
+.hero h1 em{font-style:italic;font-weight:500;position:relative;white-space:nowrap}
+.hero h1 em::after{content:"";position:absolute;left:-2%;right:-2%;bottom:.04em;height:.18em;background:var(--marigold);z-index:-1;border-radius:4px;opacity:.85}
+.hero .promise{font-size:clamp(19px,4.6vw,23px);color:var(--ink-2);margin-top:20px;max-width:30ch;font-weight:500}
+.hero-cta{margin-top:30px;display:flex;flex-direction:column;align-items:flex-start;gap:14px}
+.trust{display:flex;flex-wrap:wrap;gap:8px 18px;font-size:14.5px;color:var(--muted);font-weight:600}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+.trust svg{width:16px;height:16px;color:var(--green)}
+
+.cal-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow-lg);padding:22px;max-width:440px;width:100%;justify-self:center;position:relative}
+.cal-top{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:14px}
+.cal-top strong{font-family:var(--display);font-size:22px;font-weight:600}
+.cal-top span{font-size:13px;color:var(--muted);font-weight:600}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal .dow{font-size:11px;font-weight:700;color:var(--muted);text-align:center;text-transform:uppercase;letter-spacing:.06em;padding-bottom:4px}
+.cal .d{position:relative;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:600;border-radius:10px;color:var(--ink)}
+.cal .d.spent{color:#8B8172;background:repeating-linear-gradient(135deg,transparent 0 5px,rgba(163,54,31,.10) 5px 7px)}
+.cal .d.payday{background:var(--green);color:#fff}
+.cal .d.mon{box-shadow:inset 0 -3px 0 var(--green-light)}
+.cal .d.ring::before{content:"";position:absolute;inset:-3px;border:3px solid var(--marigold);border-radius:50% 46% 52% 48%/48% 52% 46% 52%;transform:rotate(-8deg)}
+.cal .d.ring{font-weight:800;color:var(--ink);background:var(--marigold-soft)}
+.cal .d.ring2::after{content:"";position:absolute;inset:1px;border:2px dashed var(--danger);border-radius:50%}
+.cal .d.ok::before{content:"";position:absolute;inset:-3px;border:3px solid var(--green);border-radius:50%}
+.cal-legend{display:flex;flex-wrap:wrap;gap:6px 14px;margin-top:14px;font-size:12.5px;color:var(--muted);font-weight:600}
+.cal-legend i{display:inline-block;width:12px;height:12px;border-radius:4px;margin-right:6px;vertical-align:-1px}
+.cal-note{position:absolute;right:-6px;top:-14px;background:var(--ink);color:var(--bg);font-size:13px;font-weight:700;padding:7px 12px;border-radius:999px;transform:rotate(3deg);box-shadow:var(--shadow)}
+
+/* Problem */
+.problem{background:var(--bg-2)}
+.cards3{display:grid;gap:16px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px 24px;box-shadow:var(--shadow)}
+.pcard .idx{font-family:var(--display);font-size:15px;font-weight:600;color:var(--marigold-deep);letter-spacing:.04em}
+.pcard h3{font-size:25px;margin:10px 0 10px}
+.pcard p{color:var(--muted);font-size:16px}
+.pcard .viz{margin-top:18px;height:56px;display:flex;align-items:flex-end;gap:6px}
+.sms{background:var(--bg-2);border-radius:12px 12px 12px 4px;padding:10px 12px;font-size:13px;line-height:1.4;font-weight:600;color:var(--ink-2);width:100%}
+.sms s{color:var(--muted);text-decoration-thickness:2px;text-decoration-color:var(--danger)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-size:12.5px;font-weight:700;padding:5px 10px;border-radius:999px;background:var(--marigold-soft);color:#5A3A00}
+.week{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;width:100%;align-items:end;height:56px}
+.week div{background:var(--green-soft);border-radius:5px 5px 2px 2px}
+.week div.w{background:var(--green)}
+
+/* How it works */
+.how-grid{display:grid;gap:28px}
+.split-card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:24px;box-shadow:var(--shadow-lg)}
+.split-head{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:6px;margin-bottom:16px}
+.split-head .lbl{font-size:14px;color:var(--muted);font-weight:700}
+.split-head .tot{font-family:var(--display);font-size:30px;font-weight:600}
+.splitbar{display:flex;height:64px;border-radius:12px;overflow:hidden;gap:3px}
+.splitbar > div{display:flex;align-items:flex-end;padding:8px 10px;font-weight:800;font-size:15px;min-width:0}
+.seg-fixed{background:var(--ink);color:var(--bg)}
+.seg-free{background:var(--green);color:#fff}
+.seg-future{background:repeating-linear-gradient(135deg,var(--marigold) 0 8px,#F6BD55 8px 16px);color:var(--ink)}
+.split-legend{display:grid;gap:12px;margin-top:20px}
+.sl{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 0;border-top:1px dashed var(--line)}
+.sl:first-child{border-top:0}
+.sl .k{display:flex;align-items:center;gap:10px;font-weight:700}
+.sl .k i{width:14px;height:14px;border-radius:4px;flex:none}
+.sl .v{font-weight:800;font-size:18px;text-align:right;white-space:nowrap}
+.sl small{display:block;color:var(--muted);font-weight:600;font-size:13px}
+.monday-strip{margin-top:18px;background:var(--green-soft);border-radius:12px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap}
+.monday-strip .m-l{font-weight:700;color:var(--green);font-size:15px}
+.monday-strip .m-l small{display:block;color:var(--ink-2);font-weight:600;font-size:13px}
+.monday-strip .m-v{font-family:var(--display);font-size:36px;font-weight:700;color:var(--green)}
+.future-note{margin-top:16px;font-size:14.5px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+.future-note i{flex:none;width:14px;height:14px;border-radius:4px;margin-top:4px;background:repeating-linear-gradient(135deg,var(--marigold) 0 4px,#F6BD55 4px 8px)}
+.steps{display:grid;gap:14px;counter-reset:s}
+.step{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start;padding:20px;border-radius:var(--radius);background:var(--card);border:1px solid var(--line)}
+.step .tag{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:20px}
+.step h3{font-size:24px}
+.step p{color:var(--muted);font-size:16px;margin-top:4px}
+.tag-fixed{background:var(--ink);color:var(--bg)}
+.tag-future{background:var(--marigold);color:var(--ink)}
+.tag-free{background:var(--green);color:#fff}
+.method-note{margin-top:18px;font-size:15px;color:var(--muted)}
+.method-note strong{color:var(--ink)}
+
+/* Demo */
+.demo{background:var(--ink);color:#F4EFE6;position:relative}
+.demo .eyebrow{color:#C9C2B6}
+.demo .section-head p{color:#C9C2B6}
+.demo-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:24px;align-items:start}
+.demo-grid > *{min-width:0}
+.inputs{background:var(--card);color:var(--ink);border-radius:var(--radius);padding:22px 18px;box-shadow:var(--shadow-lg);position:relative}
+.inputs fieldset{border:0;margin:0;padding:0;min-width:0}
+.group-lbl{font-size:12.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px;margin:22px 0 4px;color:var(--muted)}
+.group-lbl:first-of-type{margin-top:0}
+.group-lbl i{width:10px;height:10px;border-radius:3px}
+.field{padding:14px 0 10px;border-bottom:1px solid var(--line)}
+.field:last-child{border-bottom:0}
+.field-top{display:flex;justify-content:space-between;align-items:center;gap:12px}
+.field label{font-weight:700;font-size:16px;line-height:1.3}
+.field .hint{display:block;font-size:13px;color:var(--muted);font-weight:500}
+.money{display:flex;align-items:center;border:2px solid var(--line);border-radius:12px;background:#fff;padding:0 10px;height:48px;flex:none;width:138px;transition:border-color .15s}
+.money:focus-within{border-color:var(--ink)}
+.money span{font-weight:700;color:var(--muted);font-size:14px;margin-right:4px}
+.money input{border:0;outline:0;background:transparent;width:100%;font:800 18px/1 var(--sans);color:var(--ink);text-align:right;font-variant-numeric:tabular-nums;min-width:0;padding:0}
+.money:has(input:focus-visible){outline:3px solid var(--ink);outline-offset:2px}
+
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:44px;background:transparent;margin:6px 0 0;cursor:pointer;touch-action:pan-y;--pct:50%;--c:var(--ink)}
+input[type=range]::-webkit-slider-runnable-track{height:8px;border-radius:999px;background:linear-gradient(to right,var(--c) 0 var(--pct),#E7DFD1 var(--pct) 100%)}
+input[type=range]::-moz-range-track{height:8px;border-radius:999px;background:#E7DFD1}
+input[type=range]::-moz-range-progress{height:8px;border-radius:999px;background:var(--c)}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:30px;height:30px;border-radius:50%;background:#fff;border:3px solid var(--c);margin-top:-11px;box-shadow:0 2px 8px rgba(22,32,43,.25)}
+input[type=range]::-moz-range-thumb{width:24px;height:24px;border-radius:50%;background:#fff;border:3px solid var(--c);box-shadow:0 2px 8px rgba(22,32,43,.25)}
+input[type=range]:focus-visible{outline:none}
+input[type=range]:focus-visible::-webkit-slider-thumb{box-shadow:0 0 0 4px var(--marigold),0 2px 8px rgba(22,32,43,.25)}
+input[type=range]:focus-visible::-moz-range-thumb{box-shadow:0 0 0 4px var(--marigold)}
+.range-scale{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);font-weight:600;margin-top:-4px}
+.r-take{--c:var(--ink)}
+.r-fixed{--c:var(--ink-2)}
+.r-flex{--c:var(--marigold-deep)}
+
+.live-strip{position:sticky;top:10px;margin:-6px -6px 14px;flex-wrap:wrap;background:var(--ink);color:#fff;border-radius:14px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center;gap:4px 8px;font-size:13px;font-weight:600;box-shadow:0 10px 30px -10px rgba(0,0,0,.5);z-index:5}
+.live-strip span{white-space:nowrap}
+.live-strip b{font-size:16px;font-weight:800;margin-left:3px}
+.live-strip .ls-free b{color:var(--green-light)}
+.live-strip .ls-date b{color:var(--marigold)}
+
+.results{display:grid;gap:16px}
+.rcard{background:#1F2B38;border:1px solid #2E3B4A;border-radius:var(--radius);padding:22px}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.stat{background:#1F2B38;border:1px solid #2E3B4A;border-radius:var(--radius);padding:18px}
+.stat .s-l{font-size:13px;font-weight:700;color:#C9C2B6;letter-spacing:.02em}
+.stat .s-v{font-family:var(--display);font-size:clamp(28px,7.5vw,40px);font-weight:700;line-height:1.1;margin-top:6px;color:#fff}
+.stat .s-s{font-size:13px;color:#B5AFA4;margin-top:4px;font-weight:500}
+.stat.free{background:var(--green);border-color:var(--green)}
+.stat.free .s-l,.stat.free .s-s{color:#D7EEE1}
+.stat.wide{grid-column:1/-1}
+.committed-bar{height:10px;background:#33414F;border-radius:999px;margin-top:12px;overflow:hidden;display:flex}
+.committed-bar span{display:block;height:100%;background:#F4EFE6;border-radius:999px;transition:width .25s ease}
+.pace-vs{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;margin-top:10px;padding:8px 12px;border-radius:10px;background:#33414F;color:#F4EFE6}
+.pace-vs.over{background:rgba(242,164,28,.18);color:#FFD58A}
+.pace-vs.under{background:rgba(147,215,178,.16);color:var(--green-light)}
+
+.date-card{background:#FFFDF9;color:var(--ink);border-radius:var(--radius);padding:22px;box-shadow:var(--shadow-lg)}
+.date-card h3{font-size:16px;font-family:var(--sans);font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.date-big{font-family:var(--display);font-size:clamp(38px,10vw,56px);font-weight:700;line-height:1.02;margin-top:8px}
+.date-big .hl{background:linear-gradient(transparent 62%,var(--marigold) 62% 92%,transparent 92%);padding:0 2px}
+.date-big.ok .hl{background:linear-gradient(transparent 62%,var(--green-light) 62% 92%,transparent 92%)}
+.date-sub{margin-top:10px;font-size:16px;color:var(--ink-2);font-weight:600}
+.date-sub b{font-weight:800}
+.assume{margin-top:8px;font-size:13.5px;color:var(--muted);font-style:italic}
+.date-card .cal{margin-top:18px}
+.honesty{margin-top:18px;border-top:1px dashed var(--line);padding-top:16px}
+.toggle{display:flex;align-items:center;gap:14px;cursor:pointer;font-weight:700;font-size:16px;line-height:1.3}
+.toggle input{position:absolute;opacity:0;width:1px;height:1px}
+.toggle .sw{flex:none;width:52px;height:30px;border-radius:999px;background:#D9CFBF;position:relative;transition:background .2s}
+.toggle .sw::after{content:"";position:absolute;top:3px;left:3px;width:24px;height:24px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .2s}
+.toggle input:checked + .sw{background:var(--danger)}
+.toggle input:checked + .sw::after{transform:translateX(22px)}
+.toggle input:focus-visible + .sw{outline:3px solid var(--ink);outline-offset:3px}
+.toggle small{display:block;font-weight:500;color:var(--muted);font-size:13.5px}
+.honesty-out{margin-top:12px;background:#FBEDE8;border-radius:12px;padding:12px 14px;font-weight:600;font-size:15.5px;color:#5E1F10}
+.honesty-out b{font-weight:800}
+.honesty-out[hidden]{display:none}
+.share-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:16px}
+.share-row .btn{min-height:46px;padding:10px 18px;font-size:15px}
+.copied{font-size:14px;color:var(--green);font-weight:700}
+
+/* Founder note */
+.post{background:#fff;border:1px solid #DCD4C6;border-radius:var(--radius);box-shadow:var(--shadow-lg);max-width:640px;margin:0 auto;overflow:hidden}
+.post-head{display:flex;gap:12px;align-items:center;padding:18px 20px 6px}
+.avatar{width:52px;height:52px;border-radius:50%;background:var(--ink);color:var(--marigold);display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:22px;flex:none}
+.post-head .who{font-weight:800;font-size:16px;line-height:1.25}
+.post-head .meta{font-size:13px;color:var(--muted);font-weight:500;line-height:1.35}
+.post-body{padding:10px 20px 18px;font-size:16.5px;line-height:1.62;color:#1E2733}
+.post-body p+p{margin-top:12px}
+.post-body .big{font-weight:700}
+.post-body mark{background:var(--marigold-soft);color:inherit;padding:0 3px;border-radius:4px}
+.post-attach{margin:0 20px 16px;border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;align-items:stretch}
+.post-attach .pa-l{background:var(--ink);color:var(--marigold);font-family:var(--display);font-weight:700;font-size:28px;display:flex;align-items:center;justify-content:center;padding:0 18px;flex:none}
+.post-attach .pa-r{padding:12px 14px;background:var(--bg)}
+.post-attach .pa-r b{display:block;font-size:15px}
+.post-attach .pa-r span{font-size:13px;color:var(--muted)}
+.post-actions{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid #E6E0D6;padding:4px 8px}
+.post-actions span{display:flex;align-items:center;justify-content:center;gap:6px;padding:10px 4px;font-size:13.5px;font-weight:700;color:#545B66}
+.post-actions svg{width:18px;height:18px}
+
+/* Pricing */
+.price-grid{display:grid;gap:18px;max-width:880px}
+.plan{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:28px 24px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+.plan.plus{border:2px solid var(--ink);box-shadow:var(--shadow-lg);position:relative}
+.plan .badge{position:absolute;top:-14px;left:22px;background:var(--marigold);color:var(--ink);font-weight:800;font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;padding:6px 12px;border-radius:999px}
+.plan h3{font-size:28px}
+.plan .price{display:flex;align-items:baseline;gap:8px;margin-top:12px}
+.plan .price b{font-family:var(--display);font-size:48px;font-weight:700;line-height:1}
+.plan .price span{color:var(--muted);font-weight:600}
+.plan .sub{color:var(--muted);font-size:15px;margin-top:8px}
+.plan ul{list-style:none;padding:0;margin:20px 0 24px;display:grid;gap:10px;flex:1}
+.plan li{display:flex;gap:10px;align-items:flex-start;font-size:16px;font-weight:500}
+.plan li svg{flex:none;width:20px;height:20px;margin-top:3px;color:var(--green)}
+.plan .btn{width:100%}
+.price-foot{margin-top:18px;font-size:14.5px;color:var(--muted);max-width:720px}
+
+/* Final CTA */
+.final{padding-bottom:88px}
+.final-card{background:var(--marigold);border-radius:24px;padding:36px 22px;position:relative;overflow:hidden}
+.final-card::before{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border:22px solid rgba(22,32,43,.08);border-radius:50%}
+.final-grid{display:grid;gap:28px;position:relative}
+.final h2{font-size:clamp(34px,7.5vw,56px)}
+.final .lead{font-size:18px;margin-top:12px;font-weight:600;color:#2A2010;max-width:36ch}
+.wl-form{display:grid;gap:10px}
+.wl-form label{font-weight:800;font-size:15px}
+.wl-row{display:flex;flex-direction:column;gap:10px}
+.wl-row input{height:56px;border-radius:14px;border:2px solid var(--ink);background:#FFFDF9;padding:0 16px;font:600 17px var(--sans);color:var(--ink);width:100%;min-width:0}
+.wl-row input:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.wl-row .btn{min-height:56px;border-radius:14px}
+.wl-small{font-size:13.5px;color:#3B2E14;font-weight:600}
+.wl-err{font-size:14px;color:#7A1C08;font-weight:800;min-height:1em}
+.thanks{background:#FFFDF9;border-radius:16px;padding:20px;border:2px solid var(--ink)}
+.thanks h3{font-size:26px}
+.thanks p{margin-top:6px;font-weight:500}
+.comment-nudge{margin-top:18px;background:rgba(255,253,249,.55);border:1.5px dashed rgba(22,32,43,.4);border-radius:14px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start}
+.comment-nudge svg{flex:none;width:24px;height:24px;margin-top:2px}
+.comment-nudge p{font-weight:600;font-size:15.5px;color:#241B0B}
+.comment-nudge b{font-weight:800}
+
+/* Footer */
+footer{border-top:1px solid var(--line);padding:32px 0 40px;font-size:14.5px;color:var(--muted)}
+footer .wrap{display:grid;gap:14px}
+footer .f-top{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+footer .disc{color:var(--ink-2);font-weight:600;max-width:60ch}
+
+/* >= 640 */
+@media (min-width:640px){
+  .wrap{padding:0 32px}
+  .hero-cta{flex-direction:row;align-items:center;flex-wrap:wrap}
+  .cards3{grid-template-columns:repeat(3,1fr)}
+  .price-grid{grid-template-columns:1fr 1fr}
+  .wl-row{flex-direction:row}
+  .wl-row .btn{flex:none}
+  .inputs{padding:28px}
+  .final-card{padding:48px 40px}
+}
+/* >= 960 */
+@media (min-width:960px){
+  section{padding:104px 0}
+  .hero{padding:40px 0 96px}
+  .hero-grid{grid-template-columns:1.15fr .85fr;gap:56px}
+  .how-grid{grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+  .demo-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:32px}
+  .results{position:sticky;top:24px}
+  .live-strip{display:none}
+  .final-grid{grid-template-columns:1.1fr .9fr;align-items:center;gap:48px}
+}
+@media (max-width:420px){
+  .post-actions svg{display:none}
+}
+@media (max-width:380px){
+  .money{width:124px}
+  .stat{padding:15px}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#demo">Skip to the demo</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Thirty, home">
+      <svg class="logo-mark" viewBox="0 0 34 34" aria-hidden="true">
+        <rect x="1.5" y="4.5" width="31" height="28" rx="7" fill="#16202B"/>
+        <rect x="8" y="1" width="3" height="7" rx="1.5" fill="#16202B"/>
+        <rect x="23" y="1" width="3" height="7" rx="1.5" fill="#16202B"/>
+        <text x="17" y="25" text-anchor="middle" font-family="Georgia,serif" font-weight="700" font-size="14" fill="#FAF6EE">30</text>
+        <path d="M5 19c2-8 21-10 25-2 3 7-12 12-21 9" fill="none" stroke="#F2A41C" stroke-width="2.2" stroke-linecap="round"/>
+      </svg>
+      Thirty
+    </a>
+    <a class="head-link" href="#demo">Try the demo</a>
+  </div>
+</header>
+
+<main id="top">
+  <!-- 1. HERO -->
+  <section class="hero" aria-labelledby="hero-h">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>For salaried people in Indian metros</p>
+        <h1 id="hero-h">What date does your salary <em>actually</em> run out?</h1>
+        <p class="promise">Every Monday, know what you can spend and still reach payday.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#demo">Find your date <span class="pill">60 seconds</span></a>
+          <div class="trust" aria-label="Trust">
+            <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>No signup</span>
+            <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>No bank linking</span>
+            <span><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 8.5l3 3 7-7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Runs in your browser</span>
+          </div>
+        </div>
+      </div>
+
+      <figure class="cal-card" aria-label="Example month: with Rs 75,000 take-home, money runs out around the 24th" style="margin:0">
+        <span class="cal-note num" aria-hidden="true">Rs 75,000 in on the 1st</span>
+        <div class="cal-top"><strong>This cycle</strong><span class="num">Day 1 to 30</span></div>
+        <div class="cal" id="heroCal" aria-hidden="true"></div>
+        <div class="cal-legend" aria-hidden="true">
+          <span><i style="background:var(--green)"></i>Payday</span>
+          <span><i style="background:var(--marigold-soft);border:2px solid var(--marigold)"></i>Runs out</span>
+          <span><i style="background:repeating-linear-gradient(135deg,#fff 0 3px,rgba(163,54,31,.25) 3px 5px);border:1px solid var(--line)"></i>Running on fumes</span>
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 2. PROBLEM -->
+  <section class="problem" aria-labelledby="prob-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Why you feel broke on the 20th</p>
+        <h2 id="prob-h">You earn decently. The month still ends early.</h2>
+      </div>
+      <div class="cards3">
+        <article class="pcard">
+          <p class="idx">01</p>
+          <h3>The payday balance lies.</h3>
+          <p>The SMS shows the whole salary. Most of it is already spoken for before you buy a single dinner.</p>
+          <div class="viz"><div class="sms num">Credited: <s>Rs 75,000.00</s> &rarr; really yours: Rs 29,250</div></div>
+        </article>
+        <article class="pcard">
+          <p class="idx">02</p>
+          <h3>The surprises are on a calendar.</h3>
+          <p>Weddings, the flight home, annual renewals. None of them are surprises; they just never make it into the plan.</p>
+          <div class="viz"><div class="chips"><span class="chip">Cousin's wedding &middot; Jan</span><span class="chip">Diwali flight home</span><span class="chip">Annual renewal</span></div></div>
+        </article>
+        <article class="pcard">
+          <p class="idx">03</p>
+          <h3>You want permission, not a ledger.</h3>
+          <p>Spending is weekend-shaped. Daily limits break by Saturday; one weekly number holds.</p>
+          <div class="viz" aria-hidden="true"><div class="week"><div style="height:22%"></div><div style="height:18%"></div><div style="height:26%"></div><div style="height:20%"></div><div class="w" style="height:62%"></div><div class="w" style="height:100%"></div><div class="w" style="height:78%"></div></div></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. HOW IT WORKS -->
+  <section aria-labelledby="how-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>How it works</p>
+        <h2 id="how-h">Fixed. Future. Free.</h2>
+        <p>Three buckets, one honest number. Thirty does the arithmetic on numbers you type in; it never touches your money.</p>
+      </div>
+      <div class="how-grid">
+        <div class="split-card">
+          <div class="split-head">
+            <span class="lbl">Worked example &middot; take-home</span>
+            <span class="tot num">Rs 75,000</span>
+          </div>
+          <div class="splitbar" role="img" aria-label="Split bar: Fixed Rs 45,750, 61 percent. Free Rs 29,250, 39 percent.">
+            <div class="seg-fixed" style="flex:61">61%</div>
+            <div class="seg-free" style="flex:39">39%</div>
+          </div>
+          <div class="split-legend">
+            <div class="sl"><span class="k"><i style="background:var(--ink)"></i><span>Fixed<small>Rent &amp; bills, EMIs &amp; card dues, money home</small></span></span><span class="v num">Rs 45,750<small>61% committed</small></span></div>
+            <div class="sl"><span class="k"><i style="background:var(--green)"></i><span>Free<small>What's actually yours this cycle</small></span></span><span class="v num">Rs 29,250<small>39%</small></span></div>
+          </div>
+          <div class="monday-strip">
+            <span class="m-l">Monday number<small class="num">Rs 29,250 &divide; 4.33 weeks</small></span>
+            <span class="m-v num">Rs 6,760</span>
+          </div>
+          <p class="future-note"><i aria-hidden="true"></i><span>Add a <strong>Future</strong> item, say a Rs 12,000 Diwali flight three paydays away, and Rs 4,000 a cycle is set aside from Free before your Monday number is worked out.</span></p>
+        </div>
+
+        <div>
+          <div class="steps">
+            <div class="step"><span class="tag tag-fixed" aria-hidden="true">F</span><div><h3>Fixed</h3><p>This cycle's commitments: rent and bills, EMIs and card dues, money sent home.</p></div></div>
+            <div class="step"><span class="tag tag-future" aria-hidden="true">F</span><div><h3>Future</h3><p>Irregular costs you name, like a cousin's wedding in January or the Diwali flight home, spread across the remaining paydays.</p></div></div>
+            <div class="step"><span class="tag tag-free" aria-hidden="true">F</span><div><h3>Free</h3><p>What's left, shown as your weekly Monday number. Spend it however you like.</p></div></div>
+          </div>
+          <p class="method-note"><strong>No bank linking.</strong> Never holds or moves money. No ads, no lending, no investment products.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. DEMO -->
+  <section class="demo" id="demo" aria-labelledby="demo-h" tabindex="-1">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>60-second demo &middot; nothing leaves your browser</p>
+        <h2 id="demo-h">Find your date.</h2>
+        <p>Six numbers, rough is fine. Drag the sliders or type the amount.</p>
+      </div>
+
+      <div class="demo-grid">
+        <form class="inputs" id="demoForm" novalidate onsubmit="return false">
+          <div class="live-strip num" aria-hidden="true">
+            <span class="ls-free">Monday <b id="lsMon">Rs 6,760</b></span>
+            <span class="ls-date">Runs out <b id="lsDate">~24th</b></span>
+          </div>
+          <p class="group-lbl"><i style="background:var(--ink)"></i>Coming in</p>
+          <div class="field" data-key="take"></div>
+
+          <p class="group-lbl"><i style="background:var(--ink-2)"></i>Fixed &middot; spoken for</p>
+          <div class="field" data-key="housing"></div>
+          <div class="field" data-key="emi"></div>
+          <div class="field" data-key="home"></div>
+
+          <p class="group-lbl"><i style="background:var(--marigold-deep)"></i>Flexible &middot; how you actually spend</p>
+          <div class="field" data-key="food"></div>
+          <div class="field" data-key="outings"></div>
+
+        </form>
+
+        <div class="results" aria-live="polite" aria-atomic="false">
+          <div class="stat-row">
+            <div class="stat wide">
+              <p class="s-l">Committed before you spend a rupee</p>
+              <p class="s-v num"><span id="rCommitted">61%</span></p>
+              <p class="s-s num" id="rFixedLine">Rs 45,750 of Rs 75,000 is Fixed</p>
+              <div class="committed-bar" aria-hidden="true"><span id="rCommittedBar" style="width:61%"></span></div>
+            </div>
+            <div class="stat free">
+              <p class="s-l">Your Monday number</p>
+              <p class="s-v num" id="rMonday">Rs 6,760</p>
+              <p class="s-s">safe to spend per week</p>
+            </div>
+            <div class="stat">
+              <p class="s-l">Your current pace</p>
+              <p class="s-v num" id="rPace">Rs 8,310</p>
+              <p class="s-s">per week, food + outings</p>
+            </div>
+            <div class="stat wide" style="padding:12px 18px">
+              <p class="pace-vs num" id="rPaceVs" style="margin:0">You're spending Rs 1,550 a week more than you have.</p>
+            </div>
+          </div>
+
+          <div class="date-card">
+            <h3>Your run-out date, honestly</h3>
+            <p class="date-big num" id="rDateBig">Runs out <span class="hl">around the 24th</span></p>
+            <p class="date-sub num" id="rDateSub">That's a <b>Rs 81,000</b> gap over a year.</p>
+            <p class="assume">Assumes even spending across the month.</p>
+            <div class="cal" id="demoCal" aria-hidden="true"></div>
+
+            <div class="honesty">
+              <label class="toggle" for="honestyToggle">
+                <input type="checkbox" id="honestyToggle">
+                <span class="sw" aria-hidden="true"></span>
+                <span>Honesty check<small>Add 20% to food &amp; delivery. Most of us under-count it.</small></span>
+              </label>
+              <p class="honesty-out num" id="rHonesty" hidden></p>
+            </div>
+
+            <div class="share-row">
+              <button class="btn btn-ghost" type="button" id="copyDate">Copy my date</button>
+              <span class="copied" id="copyMsg" role="status"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. FOUNDER NOTE -->
+  <section aria-labelledby="note-h">
+    <div class="wrap">
+      <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>A note from the founder</p>
+        <h2 id="note-h">Why I'm building Thirty</h2>
+      </div>
+      <article class="post" aria-label="Founder's launch post">
+        <div class="post-head">
+          <div class="avatar" aria-hidden="true">U</div>
+          <div>
+            <p class="who">Urvish, founder of Thirty</p>
+            <p class="meta">Building Thirty &middot; the Monday number for your salary</p>
+          </div>
+        </div>
+        <div class="post-body">
+          <p class="big">Apparently, my salary lasts until the 18th.</p>
+          <p>Not because of one ridiculous purchase. I found out by typing six numbers into a 60-second demo for the app I'm building.</p>
+          <p>Take someone earning Rs 75,000 a month. Before they really start spending, <mark class="num">Rs 45,750</mark> may already be spoken for: rent, bills, EMIs, card dues and money sent home.</p>
+          <p>That's <mark>61% of their salary</mark> gone before dinners, cabs, weekends or the wedding they're travelling for next month.</p>
+          <p>The useful question isn't "What's my monthly budget?" It's "Given everything I already have to pay for, how much can I actually spend this week?"</p>
+          <p>That's what we're building with Thirty.</p>
+        </div>
+        <a class="post-attach" href="#demo" style="text-decoration:none">
+          <span class="pa-l" aria-hidden="true">30</span>
+          <span class="pa-r"><b>Find your date in 60 seconds</b><span>No signup &middot; no bank linking</span></span>
+        </a>
+        <div class="post-actions" aria-hidden="true">
+          <span><svg viewBox="0 0 24 24"><path d="M7 11v9H4v-9h3zm2 9V11l4-7c1.5 0 2.5 1 2.2 2.6L14.6 10H19a2 2 0 012 2.3l-1.2 6A2 2 0 0117.8 20H9z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Like</span>
+          <span><svg viewBox="0 0 24 24"><path d="M4 5h16v11H9l-5 4V5z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Comment</span>
+          <span><svg viewBox="0 0 24 24"><path d="M7 7h11l-3-3M17 17H6l3 3" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>Repost</span>
+          <span><svg viewBox="0 0 24 24"><path d="M21 3L10 14M21 3l-7 18-4-7-7-4 18-7z" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/></svg>Send</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 6. PRICING -->
+  <section class="problem" aria-labelledby="price-h">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow"><span class="dot" aria-hidden="true"></span>Pricing</p>
+        <h2 id="price-h">Free to find your number. Plus to plan the year.</h2>
+      </div>
+      <div class="price-grid">
+        <div class="plan">
+          <h3>Free</h3>
+          <div class="price"><b class="num">Rs 0</b><span>forever</span></div>
+          <p class="sub">Everything you need to know your week.</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>The 60-second demo</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Your Fixed / Future / Free plan</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Your Monday number, every week</li>
+          </ul>
+          <a class="btn btn-ghost" href="#demo">Start with the demo</a>
+        </div>
+        <div class="plan plus">
+          <span class="badge">Founding price</span>
+          <h3>Thirty Plus</h3>
+          <div class="price"><b class="num">Rs 499</b><span>/ year</span></div>
+          <p class="sub num">About Rs 42 a month. Founding members can pre-order; it's refundable.</p>
+          <ul>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Everything in Free</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Unlimited Future items</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>What-if scenarios (new job, new flat, a trip)</li>
+            <li><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10.5l4 4 8-9" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>Optional statement import</li>
+          </ul>
+          <a class="btn btn-primary" href="#waitlist">Pre-order as a founding member</a>
+        </div>
+      </div>
+      <p class="price-foot">No ads, no lending, no investment products, ever. We make money from Plus, not from your data.</p>
+    </div>
+  </section>
+
+  <!-- 7. FINAL CTA -->
+  <section class="final" id="waitlist" aria-labelledby="final-h">
+    <div class="wrap">
+      <div class="final-card">
+        <div class="final-grid">
+          <div>
+            <h2 id="final-h">Get the Monday number.</h2>
+            <p class="lead">One number in your inbox when Thirty opens. Then one every Monday after.</p>
+          </div>
+          <div>
+            <form class="wl-form" id="wlForm" novalidate>
+              <label for="wlEmail">Your email</label>
+              <div class="wl-row">
+                <input id="wlEmail" name="email" type="email" inputmode="email" autocomplete="email" placeholder="you@example.com" required aria-describedby="wlErr wlSmall">
+                <button class="btn btn-primary" type="submit">Join the waitlist</button>
+              </div>
+              <p class="wl-err" id="wlErr" role="alert"></p>
+              <p class="wl-small" id="wlSmall">No spam. Unsubscribe in one tap.</p>
+            </form>
+            <div class="thanks" id="wlThanks" hidden tabindex="-1">
+              <h3>You're on the list.</h3>
+              <p>Thank you. We'll send your first Monday number when Thirty opens.</p>
+            </div>
+            <div class="comment-nudge">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4V5z" fill="none" stroke="#16202B" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              <p>Comment your date. Found yours? Drop it under the launch post: <b id="nudgeDate">"Mine runs out around the 24th."</b> No judgement, everyone's got one.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="f-top">
+      <a class="logo" href="#top" style="font-size:20px">Thirty</a>
+      <span>No bank linking &middot; No ads &middot; No lending</span>
+    </div>
+    <p class="disc">Thirty is a planning tool, not a financial adviser. No investment, tax, loan or legal advice.</p>
+    <p>&copy; 2026 Thirty. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var WEEKS = 4.33;
+  var FIELDS = [
+    {key:"take",    label:"Take-home pay",                 hint:"What lands in your account each month", def:75000, min:10000, max:300000, step:500, cls:"r-take"},
+    {key:"housing", label:"Housing & bills",               hint:"Rent, electricity, Wi-Fi, phone, maid",  def:25000, min:0, max:150000, step:250, cls:"r-fixed"},
+    {key:"emi",     label:"EMIs & card dues",              hint:"Loans, no-cost EMIs, credit card bill",  def:8750,  min:0, max:100000, step:250, cls:"r-fixed"},
+    {key:"home",    label:"Money sent home",               hint:"To parents or family",                   def:12000, min:0, max:100000, step:250, cls:"r-fixed"},
+    {key:"food",    label:"Food, groceries & delivery",    hint:"Swiggy, Zomato, Blinkit, chai",          def:16000, min:0, max:100000, step:250, cls:"r-flex"},
+    {key:"outings", label:"Outings, shopping & travel",    hint:"Weekends, cabs, clothes, trips",         def:20000, min:0, max:150000, step:250, cls:"r-flex"}
+  ];
+  var state = {};
+
+  function inr(n){
+    n = Math.round(n);
+    var neg = n < 0; n = Math.abs(n);
+    var s = String(n);
+    if (s.length > 3){
+      var last3 = s.slice(-3), rest = s.slice(0, -3);
+      rest = rest.replace(/\B(?=(\d{2})+(?!\d))/g, ",");
+      s = rest + "," + last3;
+    }
+    return (neg ? "-" : "") + s;
+  }
+  function rs(n){ return "Rs " + inr(n); }
+  function r10(n){ return Math.round(n / 10) * 10; }
+  function ord(d){
+    var v = d % 100;
+    if (v >= 11 && v <= 13) return d + "th";
+    switch (d % 10){ case 1: return d + "st"; case 2: return d + "nd"; case 3: return d + "rd"; default: return d + "th"; }
+  }
+  function parse(v){ var n = parseInt(String(v).replace(/[^\d]/g, ""), 10); return isNaN(n) ? 0 : n; }
+
+  /* ---------- Calendar ---------- */
+  var DOW = ["M","T","W","T","F","S","S"];
+  function buildCal(el){
+    var html = "";
+    for (var i = 0; i < 7; i++) html += '<span class="dow">' + DOW[i] + '</span>';
+    for (var d = 1; d <= 30; d++) html += '<span class="d num" data-d="' + d + '">' + d + '</span>';
+    el.innerHTML = html;
+  }
+  function paintCal(el, runOut, honest){
+    var cells = el.querySelectorAll(".d");
+    for (var i = 0; i < cells.length; i++){
+      var c = cells[i], d = i + 1;
+      c.className = "d num";
+      if (d === 1) c.classList.add("payday");
+      else if ((d - 1) % 7 === 0) c.classList.add("mon");
+      if (runOut === null){ if (d === 30) c.classList.add("ok"); }
+      else {
+        if (d > runOut) c.classList.add("spent");
+        if (d === runOut) { c.classList.remove("spent"); c.classList.add("ring"); }
+      }
+      if (honest && d === honest && honest !== runOut) c.classList.add("ring2");
+    }
+  }
+
+  /* ---------- Build fields ---------- */
+  function setPct(range){
+    var min = +range.min, max = +range.max, v = +range.value;
+    range.style.setProperty("--pct", ((v - min) / (max - min) * 100) + "%");
+  }
+  FIELDS.forEach(function(f){
+    var host = document.querySelector('.field[data-key="' + f.key + '"]');
+    var id = "in-" + f.key;
+    host.innerHTML =
+      '<div class="field-top">' +
+        '<label for="' + id + '">' + f.label.replace("&", "&amp;") + '<span class="hint">' + f.hint + '</span></label>' +
+        '<div class="money"><span aria-hidden="true">Rs</span><input id="' + id + '" type="text" inputmode="numeric" autocomplete="off" enterkeyhint="done" aria-describedby="' + id + '-unit"></div>' +
+      '</div>' +
+      '<span class="sr-only" id="' + id + '-unit">in rupees per month</span>' +
+      '<input type="range" class="' + f.cls + '" id="' + id + '-r" min="' + f.min + '" max="' + f.max + '" step="' + f.step + '" aria-label="' + f.label.replace("&", "&amp;") + ' slider">' +
+      '<div class="range-scale num" aria-hidden="true"><span>' + rs(f.min) + '</span><span>' + rs(f.max) + '</span></div>';
+    var box = host.querySelector("#" + id), range = host.querySelector("#" + id + "-r");
+    state[f.key] = f.def;
+    box.value = inr(f.def);
+    range.value = f.def;
+    range.setAttribute("aria-valuetext", rs(f.def));
+    setPct(range);
+
+    range.addEventListener("input", function(){
+      state[f.key] = +range.value;
+      box.value = inr(state[f.key]);
+      range.setAttribute("aria-valuetext", rs(state[f.key]));
+      setPct(range);
+      update();
+    });
+    box.addEventListener("input", function(){
+      var n = Math.min(parse(box.value), 9999999);
+      state[f.key] = n;
+      range.value = Math.max(f.min, Math.min(f.max, n));
+      range.setAttribute("aria-valuetext", rs(n));
+      setPct(range);
+      update();
+    });
+    box.addEventListener("blur", function(){ box.value = inr(state[f.key]); });
+    box.addEventListener("focus", function(){ box.select(); });
+    box.addEventListener("keydown", function(e){ if (e.key === "Enter"){ e.preventDefault(); box.blur(); } });
+  });
+
+  /* ---------- Compute ---------- */
+  function runOutDay(free, flex){
+    if (free <= 0) return 0;
+    if (flex <= free) return null;
+    return Math.max(1, Math.floor(30 * free / flex));
+  }
+  function compute(foodMult){
+    var take = state.take, fixed = state.housing + state.emi + state.home;
+    var food = state.food * (foodMult || 1), flex = food + state.outings;
+    var free = take - fixed;
+    return {
+      take: take, fixed: fixed, free: free, flex: flex,
+      committed: take > 0 ? Math.round(fixed / take * 100) : 0,
+      monday: r10(Math.max(free, 0) / WEEKS),
+      pace: r10(flex / WEEKS),
+      day: runOutDay(free, flex),
+      gapYear: (free - flex) * 12,
+      surplus: free - flex
+    };
+  }
+
+  var el = function(id){ return document.getElementById(id); };
+  var toggle = el("honestyToggle");
+  var demoCal = el("demoCal");
+  buildCal(demoCal);
+  var lastDay = 24;
+
+  function update(){
+    var r = compute(1), h = compute(1.2);
+    el("rCommitted").textContent = r.committed + "%";
+    el("rCommittedBar").style.width = Math.min(100, Math.max(0, r.committed)) + "%";
+    el("rFixedLine").textContent = rs(r.fixed) + " of " + rs(r.take) + " is Fixed";
+    el("rMonday").textContent = rs(r.monday);
+    el("rPace").textContent = rs(r.pace);
+    el("lsMon").textContent = rs(r.monday);
+
+    var pv = el("rPaceVs"), diff = r.pace - r.monday;
+    pv.className = "pace-vs num " + (diff > 0 ? "over" : "under");
+    if (diff > 0) pv.textContent = "You're spending " + rs(diff) + " a week more than you have.";
+    else if (diff < 0) pv.textContent = "You're " + rs(-diff) + " a week under your Monday number. Nice.";
+    else pv.textContent = "Your pace matches your Monday number exactly.";
+
+    var big = el("rDateBig"), sub = el("rDateSub");
+    if (r.free <= 0){
+      lastDay = 1;
+      big.className = "date-big num";
+      big.innerHTML = 'Gone <span class="hl">on payday</span>';
+      sub.innerHTML = "Fixed costs are <b>" + rs(-r.free) + "</b> more than take-home. Start with Fixed, not with food.";
+      el("lsDate").textContent = "payday";
+    } else if (r.day === null){
+      lastDay = null;
+      big.className = "date-big num ok";
+      big.innerHTML = 'Your money <span class="hl">lasts the month</span>';
+      sub.innerHTML = "With about <b>" + rs(r.surplus) + "</b> left over each month.";
+      el("lsDate").textContent = "never";
+    } else {
+      lastDay = r.day;
+      big.className = "date-big num";
+      big.innerHTML = 'Runs out <span class="hl">around the ' + ord(r.day) + '</span>';
+      sub.innerHTML = "That's a <b>" + rs(-r.gapYear) + "</b> gap over a year.";
+      el("lsDate").textContent = "~" + ord(r.day);
+    }
+
+    var hOut = el("rHonesty"), hDay = null;
+    if (toggle.checked){
+      hOut.hidden = false;
+      if (h.free <= 0) hOut.innerHTML = "With 20% more on food &amp; delivery: gone on payday.";
+      else if (h.day === null) hOut.innerHTML = "With 20% more on food &amp; delivery (" + rs(state.food * 1.2) + "), you still last the month, with <b>" + rs(h.surplus) + "</b> spare.";
+      else {
+        hDay = h.day;
+        hOut.innerHTML = "With 20% more on food &amp; delivery (" + rs(state.food * 1.2) + "), it runs out <b>around the " + ord(h.day) + "</b>" +
+          (r.day && h.day < r.day ? ", " + (r.day - h.day) + " day" + (r.day - h.day === 1 ? "" : "s") + " earlier." : ".");
+      }
+    } else hOut.hidden = true;
+
+    paintCal(demoCal, lastDay === 1 && r.free <= 0 ? 1 : lastDay, hDay);
+    el("nudgeDate").textContent = lastDay === null ? '"Mine lasts the month."' : '"Mine runs out around the ' + ord(lastDay) + '."';
+  }
+  toggle.addEventListener("change", update);
+
+  /* ---------- Hero calendar (static example) ---------- */
+  var heroCal = el("heroCal");
+  buildCal(heroCal);
+  paintCal(heroCal, 24, null);
+
+  /* ---------- Copy my date ---------- */
+  el("copyDate").addEventListener("click", function(){
+    var r = compute(1);
+    var text = lastDay === null
+      ? "My salary lasts the month, with " + rs(r.surplus) + " spare. Found it with Thirty."
+      : "Apparently my salary runs out around the " + ord(lastDay) + ". Monday number: " + rs(r.monday) + ". Found it with Thirty.";
+    var msg = el("copyMsg");
+    function done(ok){ msg.textContent = ok ? "Copied. Paste it in the comments." : text; }
+    try {
+      if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(function(){ done(true); }, function(){ done(false); });
+      else done(false);
+    } catch (e) { done(false); }
+  });
+
+  /* ---------- Waitlist (front-end only) ---------- */
+  el("wlForm").addEventListener("submit", function(e){
+    e.preventDefault();
+    var input = el("wlEmail"), err = el("wlErr");
+    var v = input.value.trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){
+      err.textContent = "Please enter a valid email address.";
+      input.setAttribute("aria-invalid", "true");
+      input.focus();
+      return;
+    }
+    err.textContent = "";
+    input.removeAttribute("aria-invalid");
+    this.hidden = true;
+    var t = el("wlThanks");
+    t.hidden = false;
+    t.focus();
+  });
+
+  update();
+})();
+</script>
+</body>
+</html>
