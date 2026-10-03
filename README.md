@@ -2,6 +2,8 @@
 
 **Thirty: every Monday, know what you can spend and still reach payday.**
 
+Live: https://thirty-sigma.vercel.app (Task 4) · https://thirty-sigma.vercel.app/landing-task3.html (Task 3)
+
 This repository holds two pages and two serverless functions:
 
 - `index.html` is the landing page (Task 3), extended with the live AI feature (Task 4).
